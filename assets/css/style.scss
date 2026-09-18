@@ -2,15 +2,31 @@
 ---
 @import "{{ site.theme }}";
 
-/* 覆盖主容器宽度 */
+/* 1. 解除整体宽度限制，强制居中 */
 .wrapper {
-  width: 90% !important;         /* 占屏幕宽度的 90% */
-  max-width: 1400px !important;  /* 最大宽度限制，避免在大屏幕上拉伸得太长不好看 */
-  margin: 0 auto;                /* 确保居中 */
+  width: 90% !important;          /* 占屏幕宽度的 90%，想要更宽可改成 95% */
+  max-width: 1400px !important;   /* 最大宽度限制，避免超大屏幕拉伸太宽 */
+  margin: 0 auto !important;      /* 强制整体居中 */
+  float: none !important;         /* 清除原有浮动 */
 }
 
-/* 确保头部和内容区域也跟随变宽 */
-header, section {
+/* 2. 强制头部、内容区、底部与 wrapper 同步宽度 */
+header, section, footer {
   width: 100% !important;
   max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  float: none !important;         /* 清除原来的浮动，让它们正常堆叠 */
+  box-sizing: border-box !important; /* 核心修复：让 padding 算在 100% 宽度内，防止撑破导致向右偏移 */
+}
+
+/* 3. 细节微调：内容区域保留适量内边距，防止文字贴边 */
+section {
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+}
+
+/* 4. 确保头部内容依然居中 */
+header {
+  text-align: center;
 }
