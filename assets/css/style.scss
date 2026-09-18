@@ -5,7 +5,7 @@
 /* 1. 解除整体宽度限制，强制居中 */
 .wrapper {
   width: 90% !important;          /* 占屏幕宽度的 90%，想要更宽可改成 95% */
-  max-width: 2000px !important;   /* 最大宽度限制，避免超大屏幕拉伸太宽 */
+  max-width: 4000px !important;   /* 最大宽度限制，避免超大屏幕拉伸太宽 */
   margin: 0 auto !important;      /* 强制整体居中 */
   float: none !important;         /* 清除原有浮动 */
 }
