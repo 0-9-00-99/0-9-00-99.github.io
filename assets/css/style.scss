@@ -1,0 +1,16 @@
+---
+---
+@import "{{ site.theme }}";
+
+/* 覆盖主容器宽度 */
+.wrapper {
+  width: 90% !important;         /* 占屏幕宽度的 90% */
+  max-width: 1400px !important;  /* 最大宽度限制，避免在大屏幕上拉伸得太长不好看 */
+  margin: 0 auto;                /* 确保居中 */
+}
+
+/* 确保头部和内容区域也跟随变宽 */
+header, section {
+  width: 100% !important;
+  max-width: 100% !important;
+}
